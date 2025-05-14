@@ -7,10 +7,13 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 public class API {
+
+
+  String endereco = "https://v6.exchangerate-api.com/v6/YOUR-API-KEY/pair/EUR/GBP/AMOUNT";
   HttpClient client = HttpClient.newHttpClient();
 
   HttpRequest request = HttpRequest.newBuilder()
-      .uri(URI.create("https://v6.exchangerate-api.com/v6/YOUR-API-KEY/pair/EUR/GBP/AMOUNT"))
+      .uri(URI.create(endereco))
       .build();
   {
     try {
@@ -22,5 +25,7 @@ public class API {
       throw new RuntimeException(e);
     }
   }
+
+
 
 }
